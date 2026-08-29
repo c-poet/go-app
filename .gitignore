@@ -1,0 +1,27 @@
+# Go build and test outputs
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+coverage.out
+
+# Runtime-generated files
+data/
+logs/
+temp/
+*.log
+
+# Local Go caches used in restricted environments
+.tmp-gocache/
+.tmp-gomodcache/
+.tmp-gopath/
+.codegraph/
+
+# Editor and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

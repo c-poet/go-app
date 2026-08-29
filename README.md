@@ -20,7 +20,12 @@ import (
 )
 
 func main() {
-	app, err := core.InitApp(core.WithName("example"))
+	app, err := core.InitApp(
+		core.WithName("example"),
+		core.WithConfName("example-config"),
+		core.WithLogName("example-server"),
+		core.WithLogEnabled(true),
+	)
 	if err != nil {
 		panic(err)
 	}
@@ -32,7 +37,7 @@ func main() {
 }
 ```
 
-`InitApp` 会读取 `<应用名>.json` 配置文件；`Destroy` 会将配置写回。默认工作目录是可执行文件所在目录，也可通过 `ctj.cmd.home` 环境变量指定。日志会写入工作目录的 `logs/` 子目录。
+`InitApp` 会读取 `<配置名>.json` 配置文件；`Destroy` 会将配置写回。默认工作目录是可执行文件所在目录，也可通过 `app.home` 环境变量指定。使用 `WithConfName` 和 `WithLogName` 可分别指定配置名与日志文件名；未指定时均使用应用名。日志默认启用，可通过 `WithLogEnabled(false)` 禁用。启用时日志会写入工作目录的 `logs/` 子目录。
 
 ## 开发
 

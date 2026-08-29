@@ -9,4 +9,6 @@ const (
 	WorkTempDir = "temp"
 	// ConfExt 默认配置后缀
 	ConfExt = ".json"
+	// LogExt 默认日志后缀
+	LogExt = ".log"
 )
